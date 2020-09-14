@@ -1,0 +1,58 @@
+
+table {
+  margin: 0 auto;
+  background-color: rgb(226, 225, 225);
+}
+
+table, td, th{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td, th{
+  width: 180px;
+  height: 60px;
+  padding: 5px;
+}
+
+.center{
+  text-align: center;
+}
+
+.row{
+  display: flex;
+  label {
+    margin-left: 2px;
+  }
+}
+
+.cell-conatiner div{
+  padding: 2px 0;
+}
+
+progress {
+  border: none;
+  height: 10px;
+  width: 100%;
+  background: rgb(26, 233, 71);
+}
+  
+progress {
+  color: lightblue;
+}
+
+progress::-webkit-progress-value {
+  background: lightblue;
+}
+
+progress::-moz-progress-bar {
+  background: lightcolor;
+}
+
+progress::-webkit-progress-value {
+  background: rgb(26, 233, 71);
+}
+
+progress::-webkit-progress-bar {
+  background: rgb(199, 51, 51);
+}

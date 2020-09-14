@@ -1,0 +1,35 @@
+<h2 class='center'>NIST - Access Policy Compliance Matrix</h2>
+<table>
+    <tr *ngFor='let row of cells;let i = index; trackBy : trackByFunc'>
+        <td *ngFor='let cell of row; let j = index; trackBy : trackByFunc'
+            [class.secondary-highlight]='isCellHighlighted(i,j)'
+            [appHighlight]
+            [attr.row]='i'
+            [attr.col]='j'
+            #cell>
+            <div class='cell-conatiner' [ngSwitch]='cell.type'>
+                <ng-container *ngSwitchCase="'title'">
+                    <div class='center'>{{cell.title}}</div>
+                </ng-container>
+                <ng-container *ngSwitchCase="'zone'">
+                    <div>{{cell.zone.name}}</div>
+                    <div class='row'>
+                        <img src="assets/add.png" />
+                        <label>{{cell.zone.complianceLevel || 0}} %</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="'section'">
+                    <progress max="100" [attr.value]='cell.section.complianceLevel'></progress>
+                    <div class='row'>
+                        <img src="assets/add.png" />
+                        <label>{{cell.section.complianceLevel || 0}} %</label>
+                    </div>
+                    <div class='row'>
+                        <img src="assets/industry.png" />
+                        <label>{{cell.section.violationsCount || 0}}</label>
+                    </div>
+                </ng-container>
+            </div>
+        </td>
+    </tr>
+</table>
